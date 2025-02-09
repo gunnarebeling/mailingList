@@ -1,0 +1,59 @@
+<h1>New Message</h1>
+
+<%= form_with(model: @message, local: true, html: { class: 'needs-validation', novalidate: true }) do |form| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+      <ul>
+        <% @message.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :subjet, class: 'form-label' %>
+    <%= form.text_field :subject, class: 'form-control', required: true %>
+    <div class="invalid-feedback">
+      Please provide a title.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: 'form-label' %>
+    <%= form.text_area :body, class: 'form-control', rows: 5, required: true %>
+    <div class="invalid-feedback">
+      Please provide content.
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Message', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', messages_path, class: 'btn btn-secondary mt-3' %>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>

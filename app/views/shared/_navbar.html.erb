@@ -12,6 +12,14 @@
             <li class="nav-item">
                  <%= link_to 'About', about_path, class:"nav-link" %> 
             </li>
+            <%if Current.user %>
+                <li class="nav-item">
+                    <%= link_to 'Messages', messages_path, class:"nav-link" %> 
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'new message', new_message_path, class:"nav-link" %> 
+                </li>
+            <% end %>
             
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -22,6 +30,7 @@
                 <li class="nav-item">
                     <%= button_to "Log out", logout_path , method: :delete, class: "btn btn-primary" %>
                 </li>
+
             <% else %>
                 <li class="nav-item">
                     <%= link_to 'Sign up', sign_up_path, class:"nav-link" %>
@@ -29,6 +38,7 @@
                 <li class="nav-item">
                     <%= link_to 'Sign in', sign_in_path, class:"nav-link" %>
                 </li>
+                
             <% end %>
         </ul>
         </div>
