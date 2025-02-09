@@ -1,0 +1,45 @@
+<h1>Sign up</h1>
+
+    <% if flash[:alert] %>
+        <div id="error_explanation">
+    
+            <p><%= flash[ :alert]%></p>
+        </div>
+    <% end %>
+    <div class="mb-3">
+        <label for="standalone_input" class="form-label">Standalone Input</label>
+        <input type="text" id="standalone_input" class="form-control" placeholder="Standalone input">
+    </div>
+    <div class="mb-3">
+        <label for="display_input" class="form-label">Display Input</label>
+        <p id="display_input" class="form-control-static"></p>
+    </div>
+<%= form_with model:  @user, url: sign_up_path do |form| %>
+          
+    <div class="mb-3" >
+        <%= form.label :email %>
+        <%= form.text_field :email, placeholder: "johndoe@example.com", class:"form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field :password, class:"form-control", placeholder: "password" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, placeholder: "password" ,class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.submit "Sign up", class:"btn btn-primary" %>
+    </div>
+<%end%>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var input = document.getElementById("standalone_input");
+        var display = document.getElementById("display_input");
+
+        input.addEventListener("input", function() {
+            display.textContent = input.value;
+        });
+    });
+</script>
