@@ -100,9 +100,6 @@ GEM
     connection_pool (2.5.0)
     crass (1.0.6)
     date (3.4.1)
-    debase (0.2.9)
-      debase-ruby_core_source (>= 3.4.1)
-    debase-ruby_core_source (3.4.1)
     dotenv (3.1.7)
     dotenv-rails (3.1.7)
       dotenv (= 3.1.7)
@@ -278,8 +275,6 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    ruby-debug-ide (0.7.5)
-      rake (>= 0.8.1)
     ruby-progressbar (1.13.0)
     rubyzip (2.4.1)
     securerandom (0.4.1)
@@ -313,10 +308,10 @@ GEM
       ostruct
     stringio (3.1.2)
     thor (1.3.2)
-    thruster (0.1.10)
-    thruster (0.1.10-aarch64-linux)
-    thruster (0.1.10-arm64-darwin)
-    thruster (0.1.10-x86_64-linux)
+    thruster (0.1.11)
+    thruster (0.1.11-aarch64-linux)
+    thruster (0.1.11-arm64-darwin)
+    thruster (0.1.11-x86_64-linux)
     timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -356,7 +351,6 @@ DEPENDENCIES
   brakeman
   byebug
   capybara
-  debase
   dotenv-rails
   jbuilder
   kamal
@@ -365,7 +359,6 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.1)
   rubocop-rails-omakase
-  ruby-debug-ide
   selenium-webdriver
   solid_cable
   solid_cache
